@@ -42,3 +42,7 @@ for games in range(len(resultsClean)):
     firstGame.append(resultsClean[games])
     gamesList.append(firstGame)
     teams = teams + 2
+
+
+for game in gamesList:
+    print(game[0][0], " : ", game[1][0], " - ", game[0][1], " : ", game[1][1])
