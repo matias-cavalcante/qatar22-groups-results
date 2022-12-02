@@ -56,4 +56,8 @@ def main(webadress):
     boards = matchResultCells(gamesResults, participants)
 
 
-main('https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_3/')
+phase1 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_1/'
+phase2 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_2/'
+phase3 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_3/'
+
+# main()
