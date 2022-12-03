@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import json
 
 
 phase1 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_1/'
@@ -75,14 +74,13 @@ def main(webadress):
     gamesDates = getGamesDate(soup)
 
     boards = matchResultCells(gamesResults, participants, gamesDates)
-    newBoards = json.dumps(boards)
-    return (newBoards)
+    return (boards)
 
 
 # sopita = returnSoup(phase1)
 # theFechas = getGamesDate(sopita)
 # print(theFechas)
 
-#gms = main(phase1)
-# for g in gms:
-# m    print(g)
+gms = main(phase1)
+for g in gms:
+    print(g)

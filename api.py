@@ -14,7 +14,6 @@ CORS(app)
 def home():
     results = scrapData.main(scrapData.phase2)
     results = str(results)
-    print(results)
     return results
 
 

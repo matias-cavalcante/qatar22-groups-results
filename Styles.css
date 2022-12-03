@@ -38,14 +38,3 @@ div:nth-child(5) {
     width: 100%;
     min-height: 200px;
 }
-
-button {
-    width: 100px;
-    height: 50px;
-    background-color: rgb(42, 165, 155);
-}
-
-button:hover {
-    cursor: pointer;
-    background-color: aqua;
-}
