@@ -2,6 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 
 
+phase1 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_1/'
+phase2 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_2/'
+phase3 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_3/'
+
+
 def returnSoup(website):
     page = requests.get(website)
     return BeautifulSoup(page.content, 'html.parser')
@@ -33,6 +38,7 @@ def getResults(resultsSoup):
 def matchResultCells(result, countries):
     gamesList = []
     teams = 0
+    gamesAndResults = []
 
     for games in range(len(result)):
         firstGame = []
@@ -42,8 +48,9 @@ def matchResultCells(result, countries):
         teams = teams + 2
 
     for game in gamesList:
-        print(game[0][0], " : ", game[1][0],
-              " - ", game[0][1], " : ", game[1][1])
+        gamesAndResults.append(
+            {game[0][0]: game[1][0], game[0][1]: game[1][1]})
+    return gamesAndResults
 
 
 def main(webadress):
@@ -54,10 +61,4 @@ def main(webadress):
     gamesResults = getResults(soup)
 
     boards = matchResultCells(gamesResults, participants)
-
-
-phase1 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_1/'
-phase2 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_2/'
-phase3 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_3/'
-
-# main()
+    return (boards)
