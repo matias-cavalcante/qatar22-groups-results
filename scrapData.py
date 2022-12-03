@@ -35,7 +35,7 @@ def getResults(resultsSoup):
     return resultsClean
 
 
-def matchResultCells(result, countries):
+def matchResultCells(result, countries, dtes):
     gamesList = []
     teams = 0
     gamesAndResults = []
@@ -47,10 +47,22 @@ def matchResultCells(result, countries):
         gamesList.append(firstGame)
         teams = teams + 2
 
+    counter = 0
     for game in gamesList:
+
         gamesAndResults.append(
-            {game[0][0]: game[1][0], game[0][1]: game[1][1]})
+            {game[0][0]: game[1][0], game[0][1]: game[1]
+                [1], "date"+str(counter): dtes[counter]})
+        counter = counter + 1
     return gamesAndResults
+
+
+def getGamesDate(thesoup):
+    dates = thesoup.find_all('span', class_='fecha')
+    datesFiltered = []
+    for date in dates:
+        datesFiltered.append(str(date.text)[2:])
+    return datesFiltered
 
 
 def main(webadress):
@@ -59,6 +71,16 @@ def main(webadress):
     soup = returnSoup(url)
     participants = getCountriesWorldCup(soup)
     gamesResults = getResults(soup)
+    gamesDates = getGamesDate(soup)
 
-    boards = matchResultCells(gamesResults, participants)
+    boards = matchResultCells(gamesResults, participants, gamesDates)
     return (boards)
+
+
+# sopita = returnSoup(phase1)
+# theFechas = getGamesDate(sopita)
+# print(theFechas)
+
+gms = main(phase1)
+for g in gms:
+    print(g)
