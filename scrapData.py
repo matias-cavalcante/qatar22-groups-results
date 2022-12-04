@@ -76,13 +76,5 @@ def main(webadress):
 
     boards = matchResultCells(gamesResults, participants, gamesDates)
     newBoards = json.dumps(boards)
+
     return (newBoards)
-
-
-# sopita = returnSoup(phase1)
-# theFechas = getGamesDate(sopita)
-# print(theFechas)
-
-#gms = main(phase1)
-# for g in gms:
-#    print(g)
