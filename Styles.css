@@ -1,12 +1,11 @@
+body {
+    margin: 0;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-}
-
-div {
-    background-color: rgb(85, 96, 210);
-    width: fit-content;
 }
 
 .header,
@@ -16,8 +15,23 @@ div {
 }
 
 .header {
-    background-color: rgb(136, 136, 177);
+    background-color: #8A1538;
     min-height: 150px;
+}
+
+.header h1 {
+    font-family: sans-serif;
+    color: rgb(247, 241, 241);
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+div {
+    background-color: rgb(85, 96, 210);
+    width: fit-content;
 }
 
 #first {
