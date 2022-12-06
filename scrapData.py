@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import json
+from translate import Translator
 
 
 phase1 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_1/'
@@ -8,17 +9,27 @@ phase2 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupo
 phase3 = 'https://resultados.as.com/resultados/futbol/mundial/2022/jornada/grupos_a_3/'
 
 
+# Due to slow process when scrapping + translating countries names, they are hardcoded in the script file
+countriesEnglish = ['QATAR', 'ECUADOR', 'SENEGAL', 'NETHERLANDS', 'ENGLAND', 'IRAN', 'USA', 'WALES', 'ARGENTINA',
+                    'SAUDI ARABIA', 'MEXICO', 'POLAND', 'DENMARK', 'TUNISIA', 'FRANCE', 'AUSTRALIA', 'GERMANY',
+                    'JAPAN', 'SPAIN', 'COSTA RICA', 'MOROCCO', 'CROATIA', 'BELGIUM', 'CANADA', 'SWITZERLAND',
+                    'CAMEROON', 'BRAZIL', 'SERBIA', 'URUGUAY', 'SOUTH KOREA', 'PORTUGAL', 'GHANA']
+
+
 def returnSoup(website):
     page = requests.get(website)
     return BeautifulSoup(page.content, 'html.parser')
 
 
+"""
 def getCountriesWorldCup(soupNeeded):
+    translator = Translator(from_lang="spanish", to_lang="english")
     countriesUnfiltered = soupNeeded.find_all('span', class_='nombre-equipo')
     countriesFiltered = []
     for country in countriesUnfiltered:
-        countriesFiltered.append(country.text)
+        countriesFiltered.append(translator.translate(country.text))
     return countriesFiltered
+"""
 
 
 def getResults(resultsSoup):
@@ -70,7 +81,7 @@ def main(webadress):
     url = webadress
 
     soup = returnSoup(url)
-    participants = getCountriesWorldCup(soup)
+    participants = countriesEnglish
     gamesResults = getResults(soup)
     gamesDates = getGamesDate(soup)
 
