@@ -1,12 +1,13 @@
 body {
     margin: 0;
-    background-color: #CDF0EA;
+    background-color: #EFEFEF;
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    margin-bottom: 30px;
 }
 
 .header,
@@ -74,6 +75,7 @@ body {
 #third-p-games {
     background-color: #8A1538;
     width: 33%;
+    height: 50px;
     border-radius: 10px;
     border-width: 0;
     position: relative;
@@ -89,6 +91,7 @@ body {
 #second-p-games:hover,
 #third-p-games:hover {
     color: rgb(198, 194, 194);
+    cursor: pointer;
 }
 
 .img-container {
@@ -104,31 +107,35 @@ img {
     display: inline-block;
 }
 
-button {
-    width: 100px;
-    height: 50px;
-    background-color: rgb(42, 165, 155);
-}
-
-button:hover {
-    cursor: pointer;
-    color: rgba(73, 18, 110, 0.788);
-}
-
 .div-few-style {
     width: 90%;
+    position: relative;
+    left: 2.5%;
     height: auto;
     padding: 15px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aliceblue;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 #Fixture {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    background-color: rgba(125, 14, 64, 0.735);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: #EFEFEF;
+}
+
+@media screen and (max-width: 705px) {
+    body {}
+
+    #first,
+    #second,
+    #third {
+        grid-column: span 3;
+    }
 }
