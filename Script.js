@@ -21,23 +21,47 @@ firstButton.addEventListener('click', function(){
                 let match = firstTeam + " " + firstTeamGoals + " - " + " " + secondTeamGoals + " " + secondTeam ;
                 let matchDate = Object.values(data[block])[2];
 
-                box.classList.add("div-few-style");
-                box.innerText = match;
-                box.innerText = box.innerText + "\n" + matchDate;
-                box.style.color = "#1B2430";
+                const conOne = document.createElement("div");
+                conOne.style.backgroundColor = "blue";
+                const conTwo = document.createElement("div");
+                conTwo.style.backgroundColor = "yellow";
+                const conThree = document.createElement("div");
+
+                conOne.classList.add('div-test');
+                conTwo.classList.add('div-test');
+                conThree.classList.add('div-test');
 
                 let flagLeft = document.createElement("img");
                 flagLeft.src = "downloadImages/" + firstTeam + ".png";
                 flagLeft.style.maxWidth = "50px";
                 flagLeft.style.maxHeight = "45px";
-                box.appendChild(flagLeft);
-            
-                
+                conOne.appendChild(flagLeft);
+
                 let flagRight = document.createElement("img");
                 flagRight.src = "downloadImages/" + secondTeam + ".png";
                 flagRight.style.maxWidth = "50px";
                 flagRight.style.maxHeight = "45px";
-                box.appendChild(flagRight); 
+                conThree.appendChild(flagRight); 
+
+                conTwo.innerText = match;
+                conTwo.innerText = box.innerText + "\n" + matchDate;
+                conTwo.style.color = "#1B2430";
+
+
+
+                box.appendChild(conOne);
+                box.appendChild(conTwo);
+                box.appendChild(conThree);
+
+                box.classList.add("div-few-style");
+                /*
+                
+            
+
+               
+            
+             
+                */
                 
                 frame.appendChild(box);
                 resultDisplayed++;
