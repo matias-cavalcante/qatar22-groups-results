@@ -108,20 +108,19 @@ img {
 }
 
 .div-few-style {
-    width: 90%;
     position: relative;
     left: 2.5%;
     height: auto;
     padding: 15px;
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
     background-color: aliceblue;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 600;
 }
+
 
 #Fixture {
     display: grid;
