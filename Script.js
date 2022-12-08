@@ -3,6 +3,14 @@ const button = document.getElementById('testButton');
 const firstButton = document.getElementById('first-p-games')
 const frame = document.getElementById("Fixture");
 
+const phaseOneTitle = document.createElement("h1");
+phaseOneTitle.innerText = "PHASE 1 WORLD CUP QATAR 2022";
+
+const phaseContainer = document.createElement("div");
+phaseContainer.appendChild(phaseOneTitle);
+phaseContainer.classList.add("div-matches-phases");
+//This will have to be changed so that it displays the different groups names
+
 var resultDisplayed = 0;
 
 
@@ -10,6 +18,7 @@ firstButton.addEventListener('click', function(){
     fetch('http://192.168.1.224:5000/')           //api for the get request
     .then(response => response.json())
     .then(data => {
+        frame.appendChild(phaseContainer);
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
@@ -22,14 +31,13 @@ firstButton.addEventListener('click', function(){
                 let matchDate = Object.values(data[block])[2];
 
                 const conOne = document.createElement("div");
-                conOne.style.backgroundColor = "blue";
                 const conTwo = document.createElement("div");
-                conTwo.style.backgroundColor = "yellow";
+                conTwo.style.width = "325px";
                 const conThree = document.createElement("div");
 
-                conOne.classList.add('div-test');
-                conTwo.classList.add('div-test');
-                conThree.classList.add('div-test');
+                conOne.classList.add('div-flags-and-matches');
+                conTwo.classList.add('div-flags-and-matches');
+                conThree.classList.add('div-flags-and-matches');
 
                 let flagLeft = document.createElement("img");
                 flagLeft.src = "downloadImages/" + firstTeam + ".png";
@@ -44,7 +52,7 @@ firstButton.addEventListener('click', function(){
                 conThree.appendChild(flagRight); 
 
                 conTwo.innerText = match;
-                conTwo.innerText = box.innerText + "\n" + matchDate;
+                conTwo.innerText = conTwo.innerText + "\n" + matchDate;
                 conTwo.style.color = "#1B2430";
 
 
@@ -65,6 +73,7 @@ firstButton.addEventListener('click', function(){
                 
                 frame.appendChild(box);
                 resultDisplayed++;
+              
             }
         }
         
