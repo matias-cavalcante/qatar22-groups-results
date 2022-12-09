@@ -15,7 +15,9 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    fetch('http://192.168.1.224:5000/')           //api for the get request
+    //fetch('http://192.168.1.224:5000/') 
+    fetch('https://git.heroku.com/wcup-api.git/info')
+    //api for the get request
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
