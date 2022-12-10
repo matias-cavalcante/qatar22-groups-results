@@ -16,11 +16,13 @@ var resultDisplayed = 0;
 
 firstButton.addEventListener('click', function(){
     //fetch('http://192.168.1.224:5000/') 
-    fetch('https://git.heroku.com/wcup-api.git/')
+    //fetch('https://git.heroku.com/wcup-api.git/')
+    fetch('https://wcup-api.herokuapp.com/')
     //api for the get request
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
+        console.log(data);
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
@@ -64,14 +66,14 @@ firstButton.addEventListener('click', function(){
                 box.appendChild(conThree);
 
                 box.classList.add("div-few-style");
-                /*
+                
                 
             
 
                
             
              
-                */
+                
                 
                 frame.appendChild(box);
                 resultDisplayed++;
