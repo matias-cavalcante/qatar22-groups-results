@@ -17,7 +17,7 @@ var resultDisplayed = 0;
 firstButton.addEventListener('click', function(){
     //fetch('http://192.168.1.224:5000/') 
     //fetch('https://git.heroku.com/wcup-api.git/')
-    fetch('https://wcup-api.herokuapp.com/')
+    fetch('http://matiass37.pythonanywhere.com/')
     //api for the get request
     .then(response => response.json())
     .then(data => {
