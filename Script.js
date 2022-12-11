@@ -18,7 +18,7 @@ firstButton.addEventListener('click', function(){
     fetch('https://matiass37.pythonanywhere.com/',
         {
             method: "GET",
-            mode: "cors",
+            mode: "no-cors",
             headers: {
               "Content-Type": "text/plain",
             }
