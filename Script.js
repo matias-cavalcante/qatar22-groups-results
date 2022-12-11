@@ -15,7 +15,9 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    fetch('https://matiass37.pythonanywhere.com/')
+    fetch('https://matiass37.pythonanywhere.com/', {
+        mode: 'no-cors'
+    })
     /*fetch('http://127.0.0.1:5001/')*/
     .then(response => response.json())
     .then(data => {
