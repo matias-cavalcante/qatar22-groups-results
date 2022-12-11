@@ -23,7 +23,7 @@ firstButton.addEventListener('click', function(){
               "Content-Type": "text/plain",
             }
     })
-    .then(response => response.json())
+    .then(response => response)
     .then(data => {
         frame.appendChild(phaseContainer);
         console.log(data);
