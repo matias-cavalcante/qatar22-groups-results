@@ -19,7 +19,8 @@ firstButton.addEventListener('click', function(){
         mode: 'no-cors'
     })
     /*fetch('http://127.0.0.1:5001/')*/
-    .then(response => response.json())
+    .then(response => 
+        console.log(response.response))
     .then(data => {
         frame.appendChild(phaseContainer);
         console.log(data);
