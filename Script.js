@@ -20,10 +20,12 @@ firstButton.addEventListener('click', function(){
             method: "GET",
             mode: "no-cors",
             headers: {
-              "Content-Type": "text/plain",
+              "Content-Type": "application/json"
             }
     })
-    .then(response => response)
+    .then(response => {
+        console.log(response);
+    })
     .then(data => {
         frame.appendChild(phaseContainer);
         console.log(data);
