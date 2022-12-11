@@ -17,7 +17,7 @@ var resultDisplayed = 0;
 firstButton.addEventListener('click', function(){
     fetch('https://matiass37.pythonanywhere.com/',
     {
-        mode: "no-cors"
+        mode: "cors"
     })
     .then(response => response.json())
     .then(data => {
