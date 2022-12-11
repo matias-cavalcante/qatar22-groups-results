@@ -15,14 +15,7 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    fetch('https://matiass37.pythonanywhere.com/',
-        {
-            method: "GET",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json"
-            }
-    })
+    fetch('https://matiass37.pythonanywhere.com/')
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
