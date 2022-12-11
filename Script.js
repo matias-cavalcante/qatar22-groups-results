@@ -15,10 +15,7 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    fetch('https://matiass37.pythonanywhere.com/', {
-    mode: 'no-cors'
-    })
-    //api for the get request
+    fetch('https://matiass37.pythonanywhere.com/')
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
@@ -81,6 +78,5 @@ firstButton.addEventListener('click', function(){
             }
         }
         
-        }
-    );
+        });
 });
