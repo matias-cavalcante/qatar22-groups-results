@@ -15,8 +15,7 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    /*fetch('https://matiass37.pythonanywhere.com/')*/
-    fetch('http://127.0.0.1:5001/')
+    fetch('https://matiass37.pythonanywhere.com/')
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
