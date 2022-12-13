@@ -18,15 +18,13 @@ body {
 
 .header {
     background-color: #8A1538;
-    min-height: 150px;
+    min-height: auto;
 }
+
 
 .header h1 {
     font-family: sans-serif;
     color: rgb(247, 241, 241);
-}
-
-.header h1 {
     font-size: 3.5rem;
     text-align: center;
 }
@@ -150,6 +148,18 @@ img {
 
 @media screen and (max-width: 705px) {
 
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text p {
+        font-size: 1rem;
+        font-weight: 550;
+        width: 95%;
+        position: relative;
+        left: 2.5%;
+    }
+
     #first,
     #second,
     #third {
@@ -162,5 +172,7 @@ img {
 
     #Fixture {
         grid-template-columns: 1fr;
+        width: 90%;
+        left: 5%;
     }
 }
