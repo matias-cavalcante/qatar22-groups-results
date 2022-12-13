@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #EFEFEF;
+    background-color: #F5E8E4;
 }
 
 .wrapper {
@@ -48,8 +48,10 @@ body {
     position: relative;
     left: 2.5%;
     min-height: 200px;
-    background-color: aliceblue;
+    background-color: #EEF1FF;
+    border-radius: 18px;
     padding-bottom: 15px;
+    padding-top: 20px;
 }
 
 #first h3,
@@ -146,6 +148,15 @@ img {
     background-color: #EFEFEF;
 }
 
+@media screen and (max-width: 1014px) {
+    #Fixture {
+        grid-template-columns: 1fr;
+        width: 100%;
+        left: 0%;
+    }
+}
+
+
 @media screen and (max-width: 705px) {
 
     .header h1 {
@@ -166,13 +177,14 @@ img {
         grid-column: span 3;
     }
 
+    .div-bottom-sign {
+        font-size: 1em;
+    }
+
     .div-matches-phases {
         grid-column: span 1;
     }
 
-    #Fixture {
-        grid-template-columns: 1fr;
-        width: 90%;
-        left: 5%;
-    }
+
+
 }

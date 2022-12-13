@@ -3,10 +3,12 @@ const button = document.getElementById('testButton');
 const firstButton = document.getElementById('first-p-games')
 const frame = document.getElementById("Fixture");
 
-const phaseOneTitle = document.createElement("h1");
+const phaseOneTitle = document.createElement("h2");
 phaseOneTitle.innerText = "PHASE 1 WORLD CUP QATAR 2022";
 
 const phaseContainer = document.createElement("div");
+
+phaseOneTitle.classList.add('div-bottom-sign');
 phaseContainer.appendChild(phaseOneTitle);
 phaseContainer.classList.add("div-matches-phases");
 //This will have to be changed so that it displays the different groups names
