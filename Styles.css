@@ -56,7 +56,6 @@ body {
     position: relative;
     left: 2.5%;
     min-height: 200px;
-    background-color: #EEF1FF;
     border-radius: 18px;
     padding-bottom: 15px;
     padding-top: 20px;
@@ -81,10 +80,11 @@ body {
 #first-p-games,
 #second-p-games,
 #third-p-games {
-    background-color: #8A1538;
+    background-color: rgb(115, 45, 129);
+    ;
     width: 33%;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 7px;
     border-width: 0;
     position: relative;
     left: 33%;
@@ -98,7 +98,7 @@ body {
 #first-p-games:hover,
 #second-p-games:hover,
 #third-p-games:hover {
-    color: rgb(198, 194, 194);
+    color: rgb(196, 217, 150);
     cursor: pointer;
 }
 
@@ -124,7 +124,6 @@ img {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    background-color: white;
     font-family: sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
@@ -176,7 +175,7 @@ img {
     }
 
     .intro-text p {
-        font-size: 1rem;
+        font-size: 1.3rem;
         font-weight: 550;
     }
 
@@ -184,6 +183,11 @@ img {
     #second,
     #third {
         grid-column: span 3;
+    }
+
+    .img-container {
+        width: 100%;
+        left: 0%;
     }
 
     .div-bottom-sign {
