@@ -198,7 +198,7 @@ img {
 @media screen and (max-width: 730px) {
 
     .hero-section {
-        background-image: url("varios/wcup-port.jpg");
+        background-image: url("varios/wcup-port-mob.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-color: rgb(138, 21, 56, 0.6);
