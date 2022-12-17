@@ -1,84 +1,98 @@
 body {
     margin: 0;
-    background-color: white;
+    font-family: sans-serif;
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-bottom: 30px;
-    row-gap: 0px;
 }
 
-
-#glass {
-    position: absolute;
-    width: 100%;
+.hero-section {
+    background-image: url("varios/full-stadium.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #8A1538
 }
 
-.header {
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    z-index: 900;
+.hero-elements {
+    width: 70%;
+    position: relative;
+    left: 15%;
+    padding-top: 10%;
+    padding-bottom: 14.7%;
 }
 
-.intro-img img {
-    width: 100%;
+.hero-elements h1,
+.hero-elements h2 {
+    color: white;
+    text-align: center;
 }
 
-.intro-img,
+.hero-elements h1 {
+    font-size: 3rem;
+}
+
+.hero-elements h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#button-grid {
+    display: grid;
+    grid-template-columns: 5;
+}
+
+#see-re {
+    position: relative;
+    top: 70%;
+    width: 130px;
+    height: 60px;
+    grid-column-start: 4;
+    background-color: #8A1538;
+    border-width: 0;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-size: 1em;
+    color: white;
+}
+
+#see-re:hover {
+    cursor: pointer;
+    width: 140px;
+    height: 70px;
+    transition: 1s;
+}
+
 .intro-text {
     grid-column: span 3;
-}
-
-
-
-
-.header h1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    font-size: 3.7rem;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.header h2 {
-    font-family: sans-serif;
-    color: white;
-    font-size: 2.3rem;
-    position: relative;
-    left: 22.5%;
-    letter-spacing: 4px;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .intro-text p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    width: 92%;
     position: relative;
     left: 4%;
+    width: 92%;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 #first,
 #second,
 #third {
-    width: 95%;
     position: relative;
     left: 2.5%;
+    width: 95%;
     min-height: 200px;
-    border-radius: 18px;
     padding-bottom: 15px;
     padding-top: 20px;
+    border-radius: 18px;
 }
 
 #first h3,
 #second h3,
 #third h3 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 600;
 }
@@ -86,7 +100,6 @@ body {
 #first p,
 #second p,
 #third p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     font-weight: 400;
 }
@@ -94,19 +107,18 @@ body {
 #first-p-games,
 #second-p-games,
 #third-p-games {
-    background-color: rgb(115, 45, 129);
-    ;
+    position: relative;
+    left: 33%;
     width: 33%;
     height: 50px;
     border-radius: 7px;
     border-width: 0;
-    position: relative;
-    left: 33%;
-    font-family: sans-serif;
+
     font-size: 1rem;
-    color: white;
     font-weight: 600;
 
+    color: white;
+    background-color: rgb(115, 45, 129);
 }
 
 #first-p-games:hover,
@@ -117,13 +129,15 @@ body {
 }
 
 .img-container {
+    position: relative;
+    left: 5%;
     width: 90%;
     min-height: 150px;
     padding-top: 15px;
-    position: relative;
-    left: 5%;
+
 }
 
+/*This img tag is for the cards to of the groups phases, I need to fix it*/
 img {
     width: 100%;
     display: inline-block;
@@ -134,11 +148,10 @@ img {
     left: 7%;
     height: auto;
     width: 80%;
-    padding: 15px;
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    font-family: sans-serif;
+    padding: 15px;
+    margin-top: 20px;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -154,22 +167,25 @@ img {
 .div-matches-phases {
     grid-column: span 2;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #8A1538;
     color: rgb(247, 241, 241);
 }
 
 #Fixture {
+    position: relative;
+    left: 15%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     width: 70%;
-    position: relative;
-    left: 15%;
     background-color: #EFEFEF;
 }
 
 @media screen and (max-width: 1014px) {
+    #learn {
+        top: 30%;
+    }
+
     #Fixture {
         grid-template-columns: 1fr;
         width: 100%;
@@ -178,15 +194,36 @@ img {
 }
 
 
-@media screen and (max-width: 705px) {
+@media screen and (max-width: 730px) {
 
-    .header h1 {
-        font-size: 2rem;
+    .hero-section {
+        background-image: url("varios/wcup-port.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgb(138, 21, 56, 0.6);
+        background-blend-mode: multiply;
     }
 
-    .header h2 {
-        font-size: 1.5rem;
+    #see-re {
+        visibility: hidden;
     }
+
+    .hero-elements {
+        padding-top: 5%;
+        padding-bottom: 45%;
+    }
+
+    .hero-elements h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-elements h2 {
+        font-size: 1.2rem;
+    }
+
+
+
+
 
     .intro-text p {
         font-size: 1.3rem;
