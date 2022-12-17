@@ -8,6 +8,7 @@ phaseOneTitle.innerText = "PHASE 1 WORLD CUP QATAR 2022";
 
 const phaseContainer = document.createElement("div");
 
+
 phaseOneTitle.classList.add('div-bottom-sign');
 phaseContainer.appendChild(phaseOneTitle);
 phaseContainer.classList.add("div-matches-phases");
@@ -17,11 +18,14 @@ var resultDisplayed = 0;
 
 
 firstButton.addEventListener('click', function(){
-    fetch('https://matiass37.pythonanywhere.com/')
+    //fetch('https://matiass37.pythonanywhere.com/')
+    fetch('http://127.0.0.1:5001/')
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
-        console.log(data);
+        
+        console.log("img width is ", size);
+
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
