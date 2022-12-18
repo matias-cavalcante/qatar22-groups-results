@@ -1,5 +1,6 @@
 
 const button = document.getElementById('testButton');
+
 const firstButton = document.getElementById('first-p-games')
 const frame = document.getElementById("Fixture");
 
@@ -12,14 +13,13 @@ const phaseContainer = document.createElement("div");
 phaseOneTitle.classList.add('div-bottom-sign');
 phaseContainer.appendChild(phaseOneTitle);
 phaseContainer.classList.add("div-matches-phases");
+  
 //This will have to be changed so that it displays the different groups names
 
 var resultDisplayed = 0;
 
-
 firstButton.addEventListener('click', function(){
-    //fetch('https://matiass37.pythonanywhere.com/')
-    fetch('http://127.0.0.1:5001/')
+    fetch('https://matiass37.pythonanywhere.com/')
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
