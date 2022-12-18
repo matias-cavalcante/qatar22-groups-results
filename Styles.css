@@ -18,6 +18,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #8A1538;
+    height: 100vh;
 }
 
 .hero-elements {
@@ -69,15 +70,20 @@ body {
     transition: 1s;
 }
 
+/*Carefull from here, there must be vertical positioning issues*/
+
 .intro-text {
+    background-color: #8A1538;
+    color: #EFEFEF;
     grid-column: span 3;
-    margin-top: 10px;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 .intro-text p {
     position: relative;
-    left: 5%;
-    width: 90%;
+    left: 2.5%;
+    width: 95%;
     font-size: 1.3rem;
     font-weight: 500;
 }
@@ -86,39 +92,40 @@ body {
 #second,
 #third {
     position: relative;
-    min-height: 200px;
-    padding-bottom: 15px;
-    padding-top: 20px;
-    width: 70%;
-    height: max-content;
-    left: 15%;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 85%;
+    left: 5%;
+    margin-bottom: 3%;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    background-color: #CDF0EA;
+
 }
 
 #first h3,
 #second h3,
 #third h3 {
-    text-align: center;
+    text-align: left;
     font-weight: 600;
+    border-bottom: 2px solid #8A1538;
 }
 
 #first p,
 #second p,
 #third p {
     position: relative;
-    width: 90%;
-    left: 5%;
+    width: 100%;
     text-align: justify;
-    font-weight: 400;
 }
 
 #first-p-games,
 #second-p-games,
 #third-p-games {
     position: relative;
-    left: 20%;
-    width: 60%;
+    width: 100%;
     height: 50px;
-    border-radius: 7px;
+    border-radius: 5px;
     border-width: 0;
 
     font-size: 1rem;
@@ -132,7 +139,8 @@ body {
 #first-p-games:hover,
 #second-p-games:hover,
 #third-p-games:hover {
-    color: rgb(196, 217, 150);
+    font-size: 1.1em;
+    transition: 1s;
     cursor: pointer;
 }
 
@@ -140,15 +148,14 @@ body {
     position: relative;
     width: 100%;
     min-height: 150px;
-    padding-top: 15px;
 
 }
 
-/*This img tag is for the cards to of the groups phases, I need to fix it*/
 img {
     width: 100%;
-    display: inline-block;
 }
+
+/*This is for the box of the games results*/
 
 .div-few-style {
     position: relative;
@@ -188,16 +195,21 @@ img {
     background-color: #EFEFEF;
 }
 
+/*Nothing to touch here*/
+
 @media screen and (max-width: 1014px) {
-    #learn {
-        top: 30%;
-    }
 
     #Fixture {
         grid-template-columns: 1fr;
         width: 100%;
         left: 0%;
     }
+
+    #see-re {
+        top: -23%;
+        grid-column-start: 2;
+    }
+
 }
 
 
@@ -209,12 +221,6 @@ img {
         background-size: cover;
         background-color: rgb(138, 21, 56, 0.6);
         background-blend-mode: multiply;
-    }
-
-    #see-re {
-        /*visibility: hidden;*/
-        top: 130%;
-        grid-column-start: 2;
     }
 
     .hero-elements {
@@ -242,29 +248,12 @@ img {
     #second,
     #third {
         grid-column: span 3;
-        margin-bottom: 200px;
-        width: 88%;
-        left: 6%;
-    }
-
-    #first p,
-    #second p,
-    #third p {
-        width: 100%;
-        left: 0%;
     }
 
 
-
-    #first-p-games,
-    #second-p-games,
-    #third-p-games {
-        left: 0%;
-        width: 100%;
-    }
-
+    /*This next classes modifications need to be evaluated*/
     .div-bottom-sign {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     .div-matches-phases {
