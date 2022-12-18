@@ -24,7 +24,6 @@ firstButton.addEventListener('click', function(){
     .then(data => {
         frame.appendChild(phaseContainer);
         
-        console.log("img width is ", size);
 
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
