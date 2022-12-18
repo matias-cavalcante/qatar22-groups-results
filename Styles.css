@@ -52,7 +52,7 @@ body {
 
 #see-re {
     position: relative;
-    top: 70%;
+    top: 50%;
     width: 130px;
     height: 60px;
     grid-column-start: 4;
@@ -210,7 +210,7 @@ img {
 
     #see-re {
         /*visibility: hidden;*/
-        top: 360%;
+        top: 130%;
         grid-column-start: 2;
     }
 
