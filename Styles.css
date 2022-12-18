@@ -10,7 +10,7 @@ body {
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 1em;
     height: 100vh;
 }
 
@@ -78,22 +78,21 @@ body {
 
 .intro-text p {
     position: relative;
-    left: 4%;
-    width: 92%;
+    left: 5%;
+    width: 90%;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #first,
 #second,
 #third {
     position: relative;
-    left: 2.5%;
-    width: 95%;
     min-height: 200px;
     padding-bottom: 15px;
     padding-top: 20px;
-    border-radius: 18px;
+    width: 70%;
+    left: 15%;
 }
 
 #first h3,
@@ -136,8 +135,7 @@ body {
 
 .img-container {
     position: relative;
-    left: 5%;
-    width: 90%;
+    width: 100%;
     min-height: 150px;
     padding-top: 15px;
 
@@ -211,7 +209,9 @@ img {
     }
 
     #see-re {
-        visibility: hidden;
+        /*visibility: hidden;*/
+        top: 360%;
+        grid-column-start: 2;
     }
 
     .hero-elements {
@@ -227,19 +227,18 @@ img {
         font-size: 1.2rem;
     }
 
-
-
-
-
     .intro-text p {
+        width: 70%;
+        left: 15%;
         font-size: 1.3rem;
-        font-weight: 550;
+        font-weight: 500;
     }
 
     #first,
     #second,
     #third {
         grid-column: span 3;
+        margin-bottom: 40%;
     }
 
     .img-container {
