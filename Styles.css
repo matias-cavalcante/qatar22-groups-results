@@ -101,7 +101,7 @@ body {
     background-color: white;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -132,10 +132,8 @@ body {
     font-size: 1rem;
     font-weight: 600;
     background-color: #8A1538;
-    color: #F3CCFF;
-    box-shadow: 0px 5px 3px 0px rgba(209, 23, 23, 0.4);
-
-
+    color: white;
+    box-shadow: 0px 5px 3px 0px rgba(209, 23, 23, 0.3);
 }
 
 #first-p-games:hover,
