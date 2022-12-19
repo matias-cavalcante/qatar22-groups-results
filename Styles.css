@@ -99,7 +99,9 @@ body {
     margin-bottom: 3%;
     padding-bottom: 20px;
     background-color: white;
-    border: solid 1.5px #8A1538;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
 
 }
 
@@ -131,6 +133,8 @@ body {
     font-weight: 600;
     background-color: #8A1538;
     color: white;
+    box-shadow: 0px 5px 3px 0px rgba(209, 23, 23, 0.4);
+
 
 }
 
