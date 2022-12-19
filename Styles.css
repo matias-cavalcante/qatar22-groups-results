@@ -227,11 +227,11 @@ img {
     }
 
     .hero-elements h1 {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
     }
 
     .hero-elements h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .intro-text p {
@@ -258,6 +258,11 @@ img {
         grid-column: span 1;
     }
 
+}
 
-
+@media screen and (max-width: 450px) {
+    #see-re {
+        top: 200%;
+        grid-column-start: 2;
+    }
 }
