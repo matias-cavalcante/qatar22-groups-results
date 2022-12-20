@@ -196,7 +196,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     width: 100%;
-    background-color: #CDF0EA;
+    background-color: #fff5ee;
 }
 
 /*Nothing to touch here*/
