@@ -1,18 +1,47 @@
-
-const button = document.getElementById('testButton');
-
 const firstButton = document.getElementById('first-p-games')
 const frame = document.getElementById("Fixture");
 
 const phaseOneTitle = document.createElement("h2");
-phaseOneTitle.innerText = "PHASE 1 WORLD CUP QATAR 2022";
+phaseOneTitle.innerText = "Groups phase one";
+phaseOneTitle.style.fontWeight = "500";
 
 const phaseContainer = document.createElement("div");
-
 
 phaseOneTitle.classList.add('div-bottom-sign');
 phaseContainer.appendChild(phaseOneTitle);
 phaseContainer.classList.add("div-matches-phases");
+
+function getMatchInfo(source, position){
+    let firstTeam = Object.keys(source[position])[0];
+    let firstTgoals = Object.values(source[position])[0];
+
+    let secondTeam = Object.keys(source[position])[1];
+    let secondTgoals = Object.values(source[position])[1];
+
+    let matchDate = Object.values(source[position])[2];
+
+    return [firstTeam, firstTgoals, secondTeam, secondTgoals, matchDate]
+}
+
+function createResultRow(){
+    const row = document.createElement('p');
+    return row
+}
+
+function getCountryFlag(country){
+    let flagLeft = document.createElement("img");
+    flagLeft.src = "downloadImages/" + country + ".png";
+    flagLeft.style.maxWidth = "50px";
+    flagLeft.style.maxHeight = "45px";
+    flagLeft.style.paddingRight = "10px";
+    return flagLeft;
+}
+
+function flagAndCountryBox(){
+    let flagAndCountry = document.createElement('div');
+    flagAndCountry.style.display = "flex";
+    return flagAndCountry
+}
   
 //This will have to be changed so that it displays the different groups names
 
@@ -24,64 +53,69 @@ firstButton.addEventListener('click', function(){
     .then(data => {
         frame.appendChild(phaseContainer);
         
-
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
 
-                let firstTeam = Object.keys(data[block])[0];
-                let firstTeamGoals = Object.values(data[block])[0];
-                let secondTeam = Object.keys(data[block])[1];
-                let secondTeamGoals = Object.values(data[block])[1];
-                let match = firstTeam + " " + firstTeamGoals + " - " + " " + secondTeamGoals + " " + secondTeam ;
-                let matchDate = Object.values(data[block])[2];
-
-                const conOne = document.createElement("div");
-                const conTwo = document.createElement("div");
-                conTwo.style.width = "325px";
-                const conThree = document.createElement("div");
-
-                conOne.classList.add('div-flags-and-matches');
-                conTwo.classList.add('div-flags-and-matches');
-                conThree.classList.add('div-flags-and-matches');
-
-                let flagLeft = document.createElement("img");
-                flagLeft.src = "downloadImages/" + firstTeam + ".png";
-                flagLeft.style.maxWidth = "50px";
-                flagLeft.style.maxHeight = "45px";
-                conOne.appendChild(flagLeft);
-
-                let flagRight = document.createElement("img");
-                flagRight.src = "downloadImages/" + secondTeam + ".png";
-                flagRight.style.maxWidth = "50px";
-                flagRight.style.maxHeight = "45px";
-                conThree.appendChild(flagRight); 
-
-                conTwo.innerText = match;
-                conTwo.innerText = conTwo.innerText + "\n" + matchDate;
-                conTwo.style.color = "#1B2430";
+                let matchInfo = getMatchInfo(data, block);
 
 
+                const countryOneRow = createResultRow();
+                countryOneRow.classList.add('div-flags-and-matches');
+                const countryTwoRow = createResultRow();
+                countryTwoRow.classList.add('div-flags-and-matches');
 
-                box.appendChild(conOne);
-                box.appendChild(conTwo);
-                box.appendChild(conThree);
+                const matchDateRow =   createResultRow();
+                matchDateRow.classList.add('div-flags-and-matches');
+
+
+                let firstCountryFlag = getCountryFlag(matchInfo[0])
+                let countrie1test = document.createElement('p');
+                countrie1test.innerHTML = matchInfo[0];
+                
+                let boxFlagCountryOne = flagAndCountryBox();
+                boxFlagCountryOne.appendChild(firstCountryFlag);
+                boxFlagCountryOne.append(countrie1test);
+
+                let country1Goals = document.createElement('p');
+                country1Goals.innerHTML = matchInfo[1];
+                country1Goals.style.position = "relative";
+                country1Goals.style.right = "10px";
+
+                countryOneRow.appendChild(boxFlagCountryOne);                
+                countryOneRow.appendChild(country1Goals);
+
+                /*Now second country*/
+
+                let secCountryFlag = getCountryFlag(matchInfo[2])
+                let countrie2test = document.createElement('p');
+                countrie2test.innerHTML = matchInfo[2];
+
+                let boxFlagCountryTwo = flagAndCountryBox();
+                boxFlagCountryTwo.appendChild(secCountryFlag);
+                boxFlagCountryTwo.append(countrie2test);
+
+                
+                let country2Goals = document.createElement('p');
+                country2Goals.innerHTML = matchInfo[3];
+                country2Goals.style.position = "relative";
+                country2Goals.style.right = "10px";
+
+                countryTwoRow.appendChild(boxFlagCountryTwo);
+                countryTwoRow.appendChild(country2Goals);
+
+                matchDateRow.innerHTML = matchInfo[4];
+                matchDateRow.style.color = "grey";
+
+                box.appendChild(countryOneRow);
+                box.appendChild(countryTwoRow);
+                box.appendChild(matchDateRow);
 
                 box.classList.add("div-few-style");
-                
-                
-            
-
-               
-            
-             
-                
-                
+                                
                 frame.appendChild(box);
                 resultDisplayed++;
-              
             }
         }
-        
         });
 });
