@@ -204,9 +204,9 @@ img {
 @media screen and (max-width: 1014px) {
 
     #Fixture {
-        grid-template-columns: 1fr;
+        /*grid-template-columns: 1fr;
         width: 100%;
-        left: 0%;
+        left: 0%;*/
     }
 
     #see-re {
@@ -217,7 +217,11 @@ img {
 }
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 736px) {
+
+    #Fixture {
+        grid-template-columns: 1fr;
+    }
 
     .hero-section {
         background-image: url("varios/wcup-port-mob.jpg");
