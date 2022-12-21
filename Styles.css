@@ -214,6 +214,10 @@ img {
 
 @media screen and (max-width: 736px) {
 
+    #button-grid {
+        padding-top: 70%;
+    }
+
     #Fixture {
         grid-template-columns: 1fr;
     }
@@ -228,7 +232,7 @@ img {
 
     .hero-elements {
         padding-top: 5%;
-        padding-bottom: 45%;
+        padding-bottom: 50%;
     }
 
     .hero-elements h2 {
@@ -265,6 +269,5 @@ img {
 
     #see-re {
         top: 170%;
-        grid-column-start: 2;
     }
 }
