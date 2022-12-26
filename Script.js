@@ -54,10 +54,6 @@ function mainMatches(url){
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
-        var resultDisplayed = 0;
-
-        
-        if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
 
@@ -115,14 +111,15 @@ function mainMatches(url){
 
                 box.classList.add("div-few-style");
                 frame.appendChild(box);
+                frame.scrollIntoView();
 
                 console.log("We are here")
 
-                resultDisplayed++;
             }
-        }
+
         });
 }
+
 
 function clearFrame() {
     while (frame.firstChild) {
@@ -130,19 +127,22 @@ function clearFrame() {
     }
   }
 
+
 firstButton.addEventListener('click', function(){
     clearFrame();
-    mainMatches('https://matiass37.pythonanywhere.com/one');
+    mainMatches('https://matiass37.pythonanywhere.com/one');    
 })
+    
 secondButton.addEventListener('click', function(){
     clearFrame();
     mainMatches('https://matiass37.pythonanywhere.com/two');
 })
-
+    
 thirdButton.addEventListener('click', function(){
     clearFrame();
     mainMatches('https://matiass37.pythonanywhere.com/three');
 })
+
 
 
 
