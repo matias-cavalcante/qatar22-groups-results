@@ -82,6 +82,7 @@ body {
 
 .intro-text p {
     position: relative;
+    text-align: justify;
     left: 2.5%;
     width: 95%;
     font-size: 1.3rem;
