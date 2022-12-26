@@ -1,8 +1,12 @@
 const firstButton = document.getElementById('first-p-games')
+const secondButton = document.getElementById('second-p-games')
+const thirdButton = document.getElementById('third-p-games')
+
+
 const frame = document.getElementById("Fixture");
 
 const phaseOneTitle = document.createElement("h2");
-phaseOneTitle.innerText = "Groups phase one";
+phaseOneTitle.innerText = "Groups phase one ";
 phaseOneTitle.style.fontWeight = "500";
 
 const phaseContainer = document.createElement("div");
@@ -45,13 +49,13 @@ function flagAndCountryBox(){
   
 //This will have to be changed so that it displays the different groups names
 
-var resultDisplayed = 0;
-
-firstButton.addEventListener('click', function(){
-    fetch('https://matiass37.pythonanywhere.com/')
+function mainMatches(url){
+    fetch(url)
     .then(response => response.json())
     .then(data => {
         frame.appendChild(phaseContainer);
+        var resultDisplayed = 0;
+
         
         if (resultDisplayed < 1){
             for (let block = 0; block < data.length; block ++){
@@ -85,8 +89,7 @@ firstButton.addEventListener('click', function(){
                 countryOneRow.appendChild(boxFlagCountryOne);                
                 countryOneRow.appendChild(country1Goals);
 
-                /*Now second country*/
-
+                
                 let secCountryFlag = getCountryFlag(matchInfo[2])
                 let countrie2test = document.createElement('p');
                 countrie2test.innerHTML = matchInfo[2];
@@ -94,7 +97,6 @@ firstButton.addEventListener('click', function(){
                 let boxFlagCountryTwo = flagAndCountryBox();
                 boxFlagCountryTwo.appendChild(secCountryFlag);
                 boxFlagCountryTwo.append(countrie2test);
-
                 
                 let country2Goals = document.createElement('p');
                 country2Goals.innerHTML = matchInfo[3];
@@ -112,10 +114,36 @@ firstButton.addEventListener('click', function(){
                 box.appendChild(matchDateRow);
 
                 box.classList.add("div-few-style");
-                                
                 frame.appendChild(box);
+
+                console.log("We are here")
+
                 resultDisplayed++;
             }
         }
         });
-});
+}
+
+function clearFrame() {
+    while (frame.firstChild) {
+      frame.removeChild(frame.firstChild);
+    }
+  }
+
+firstButton.addEventListener('click', function(){
+    clearFrame();
+    mainMatches('https://matiass37.pythonanywhere.com/one');
+})
+secondButton.addEventListener('click', function(){
+    clearFrame();
+    mainMatches('https://matiass37.pythonanywhere.com/two');
+})
+
+thirdButton.addEventListener('click', function(){
+    clearFrame();
+    mainMatches('https://matiass37.pythonanywhere.com/three');
+})
+
+
+
+
