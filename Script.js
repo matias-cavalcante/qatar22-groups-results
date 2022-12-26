@@ -2,18 +2,21 @@ const firstButton = document.getElementById('first-p-games')
 const secondButton = document.getElementById('second-p-games')
 const thirdButton = document.getElementById('third-p-games')
 
-
 const frame = document.getElementById("Fixture");
 
-const phaseOneTitle = document.createElement("h2");
-phaseOneTitle.innerText = "Groups phase one ";
-phaseOneTitle.style.fontWeight = "500";
+function createFixtureH2(text){
+    const h2Text = document.createElement("h2");
+    h2Text.innerText = text;  
+    h2Text.style.fontWeight = "500";
+    return h2Text
+}
 
-const phaseContainer = document.createElement("div");
-
-phaseOneTitle.classList.add('div-bottom-sign');
-phaseContainer.appendChild(phaseOneTitle);
-phaseContainer.classList.add("div-matches-phases");
+function fixtureH2container(h2element, styles){
+    const phaseContainer = document.createElement("div");
+    phaseContainer.appendChild(h2element);
+    phaseContainer.classList.add(styles);
+    return phaseContainer;
+}
 
 function getMatchInfo(source, position){
     let firstTeam = Object.keys(source[position])[0];
@@ -49,11 +52,11 @@ function flagAndCountryBox(){
   
 //This will have to be changed so that it displays the different groups names
 
-function mainMatches(url){
+function mainMatches(url, titleContainer){
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        frame.appendChild(phaseContainer);
+        frame.appendChild(titleContainer);
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
 
@@ -120,30 +123,29 @@ function mainMatches(url){
         });
 }
 
-
 function clearFrame() {
     while (frame.firstChild) {
       frame.removeChild(frame.firstChild);
     }
   }
 
-
 firstButton.addEventListener('click', function(){
     clearFrame();
-    mainMatches('https://matiass37.pythonanywhere.com/one');    
+    const title = createFixtureH2('Groups phase one');
+    const container = fixtureH2container(title, "div-matches-phases");
+    mainMatches('https://matiass37.pythonanywhere.com/one', container);    
 })
     
 secondButton.addEventListener('click', function(){
     clearFrame();
-    mainMatches('https://matiass37.pythonanywhere.com/two');
+    const title = createFixtureH2('Groups phase two');
+    const container = fixtureH2container(title, "div-matches-phases");
+    mainMatches('https://matiass37.pythonanywhere.com/two', container);
 })
     
 thirdButton.addEventListener('click', function(){
     clearFrame();
-    mainMatches('https://matiass37.pythonanywhere.com/three');
+    const title = createFixtureH2('Groups phase three');
+    const container = fixtureH2container(title, "div-matches-phases");
+    mainMatches('https://matiass37.pythonanywhere.com/three', container);
 })
-
-
-
-
-
