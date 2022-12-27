@@ -10,7 +10,7 @@ body {
 #go-top {
     background-color: #550164;
     opacity: 0.7;
-    position: fixed;
+    position: sticky;
     left: calc(100% - 50px);
     top: 85%;
     z-index: 999;
