@@ -7,6 +7,36 @@ body {
     font-family: sans-serif;
 }
 
+#go-top {
+    background-color: rgb(83, 80, 80);
+    opacity: 0.7;
+    position: fixed;
+    left: 96%;
+    top: 85%;
+    z-index: 999;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border-width: 0px;
+}
+
+#go-top::before {
+    content: "";
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#go-top:hover {
+    cursor: pointer;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

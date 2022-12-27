@@ -2,7 +2,16 @@ const firstButton = document.getElementById('first-p-games')
 const secondButton = document.getElementById('second-p-games')
 const thirdButton = document.getElementById('third-p-games')
 
+const scrollUpButton = document.getElementById('go-top');
 const frame = document.getElementById("Fixture");
+
+scrollUpButton.addEventListener('click', function(){
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+})
 
 function createFixtureH2(text){
     const h2Text = document.createElement("h2");
