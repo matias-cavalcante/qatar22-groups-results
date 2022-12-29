@@ -237,10 +237,6 @@ img {
 
 /*Below section with the round of 16*/
 
-#round-16-section-container {
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
 
 #Round-of-16 {
     position: relative;
@@ -308,6 +304,12 @@ img {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
+#results-16:hover {
+    font-size: 1.1em;
+    transition: 1s;
+    cursor: pointer;
+}
+
 /*Nothing to touch here*/
 
 @media screen and (max-width: 1014px) {
@@ -338,6 +340,7 @@ img {
 
     .img-16-results {
         grid-column: span 2;
+        border-bottom-left-radius: 8px;
     }
 
     .img-16-results img {
