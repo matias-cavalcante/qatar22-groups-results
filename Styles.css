@@ -235,7 +235,7 @@ img {
     width: 100%;
 }
 
-/*Below section with the round of 16 section*/
+/*Below section with the round of 16*/
 
 #round-16-section-container {
     background-color: #550164;
@@ -361,7 +361,7 @@ img {
     }
 
     #button-grid {
-        padding-top: 33%;
+        padding-top: 40%;
     }
 
     #Fixture {
@@ -377,6 +377,7 @@ img {
     }
 
     .hero-elements {
+        position: relative;
         padding-top: 5%;
         padding-bottom: 50%;
     }
