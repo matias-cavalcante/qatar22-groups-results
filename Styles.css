@@ -238,7 +238,6 @@ img {
 /*Below section with the round of 16*/
 
 #round-16-section-container {
-    background-color: #550164;
     padding-top: 2%;
     padding-bottom: 2%;
 }
@@ -282,6 +281,9 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: white;
 
 }
 
