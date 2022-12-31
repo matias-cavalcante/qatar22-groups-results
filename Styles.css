@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #EFEFEF;
+    background-color: #DEE2D5;
 }
 
 #go-top {
@@ -243,6 +243,7 @@ img {
     background-color: white;
     width: 95%;
     left: 2.5%;
+    margin-bottom: 8%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-radius: 8px;
@@ -310,6 +311,16 @@ img {
     cursor: pointer;
 }
 
+#group-16-section-container {
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
 /*Nothing to touch here*/
 
 @media screen and (max-width: 1014px) {
@@ -370,6 +381,10 @@ img {
     }
 
     #Fixture {
+        grid-template-columns: 1fr;
+    }
+
+    #group-16-section-container {
         grid-template-columns: 1fr;
     }
 

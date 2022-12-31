@@ -2,8 +2,13 @@ const firstButton = document.getElementById('first-p-games')
 const secondButton = document.getElementById('second-p-games')
 const thirdButton = document.getElementById('third-p-games')
 
-const scrollUpButton = document.getElementById('go-top');
 const frame = document.getElementById("Fixture");
+
+const resultGroupSixteen = document.getElementById('results-16')
+const resultGroupSixtenBox = document.getElementById('group-16-section-container')
+
+const scrollUpButton = document.getElementById('go-top');
+
 
 scrollUpButton.addEventListener('click', function(){
     window.scrollTo({
@@ -61,7 +66,7 @@ function flagAndCountryBox(){
   
 //This will have to be changed so that it displays the different groups names
 
-function mainMatches(url, titleContainer){
+function mainMatches(url, titleContainer, frameContainer){
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -122,8 +127,8 @@ function mainMatches(url, titleContainer){
                 box.appendChild(matchDateRow);
 
                 box.classList.add("div-few-style");
-                frame.appendChild(box);
-                frame.scrollIntoView();
+                frameContainer.appendChild(box);
+                frameContainer.scrollIntoView();
 
                 console.log("We are here")
 
@@ -142,19 +147,25 @@ firstButton.addEventListener('click', function(){
     clearFrame();
     const title = createFixtureH2('Groups phase one');
     const container = fixtureH2container(title, "div-matches-phases");
-    mainMatches('https://matiass37.pythonanywhere.com/one', container);    
+    mainMatches('https://matiass37.pythonanywhere.com/one', container, frame);    
 })
     
 secondButton.addEventListener('click', function(){
     clearFrame();
     const title = createFixtureH2('Groups phase two');
     const container = fixtureH2container(title, "div-matches-phases");
-    mainMatches('https://matiass37.pythonanywhere.com/two', container);
+    mainMatches('https://matiass37.pythonanywhere.com/two', container, frame);
 })
     
 thirdButton.addEventListener('click', function(){
     clearFrame();
     const title = createFixtureH2('Groups phase three');
     const container = fixtureH2container(title, "div-matches-phases");
-    mainMatches('https://matiass37.pythonanywhere.com/three', container);
+    mainMatches('https://matiass37.pythonanywhere.com/three', container, frame);
+})
+
+resultGroupSixteen.addEventListener('click', function(){
+    const title = createFixtureH2('Group of sixteen');
+    const container = fixtureH2container(title, "div-matches-phases")
+    mainMatches('https://matiass37.pythonanywhere.com/sixteen', container, resultGroupSixtenBox);
 })
