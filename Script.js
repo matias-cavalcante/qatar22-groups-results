@@ -18,6 +18,12 @@ scrollUpButton.addEventListener('click', function(){
       });
 })
 
+function createMatchBoxes(){
+    const styledBox = document.createElement("div");
+    styledBox.classList.add("div-few-style");
+    return styledBox
+}
+
 function createFixtureH2(text){
     const h2Text = document.createElement("h2");
     h2Text.innerText = text;  
@@ -50,6 +56,14 @@ function createResultRow(){
     return row
 }
 
+function createDateRow(date){
+    const dateRow = document.createElement('p');
+    dateRow.classList.add('div-flags-and-matches');
+    dateRow.innerHTML = date;
+    dateRow.style.color = "grey";
+    return dateRow
+}
+
 function countryNameElement(name){
     let country = document.createElement('p');
     country.innerHTML = name;
@@ -70,6 +84,22 @@ function flagAndCountryBox(){
     flagAndCountry.style.display = "flex";
     return flagAndCountry
 }
+
+function teamGoalsBuilder(amount){
+    let teamGoals = document.createElement('p');
+    teamGoals.innerHTML = amount;
+    teamGoals.style.position = "relative";
+    teamGoals.style.right = "10px";
+    return teamGoals
+}
+
+function countryContainerCreator(countryName){
+    let boxFlagCountry = flagAndCountryBox();
+    let countryFlag = getCountryFlag(countryName)
+    let countryNameStyled = countryNameElement(countryName)
+    boxFlagCountry.append(countryFlag, countryNameStyled);
+    return boxFlagCountry
+}
   
 //This will have to be changed so that it displays the different groups names
 
@@ -79,51 +109,23 @@ function mainMatches(url, titleContainer, frameContainer){
     .then(data => {
         frameContainer.appendChild(titleContainer);
             for (let block = 0; block < data.length; block ++){
-                const box = document.createElement("div");
+                const box = createMatchBoxes();
                 let matchInfo = getMatchInfo(data, block);
 
                 const countryOneRow = createResultRow();
                 const countryTwoRow = createResultRow();
-                const matchDateRow =   createResultRow();
+                const matchDateRow =  createDateRow(matchInfo[4]);
 
-                let firstCountryFlag = getCountryFlag(matchInfo[0])
-                let countrie1test = countryNameElement(matchInfo[0])
-                
-                let boxFlagCountryOne = flagAndCountryBox();
-                boxFlagCountryOne.appendChild(firstCountryFlag);
-                boxFlagCountryOne.append(countrie1test);
+                let boxFlagCountryOne = countryContainerCreator(matchInfo[0])
+                let countryOneGoals = teamGoalsBuilder(matchInfo[1]);
+                countryOneRow.append(boxFlagCountryOne, countryOneGoals);
 
-                let country1Goals = document.createElement('p');
-                country1Goals.innerHTML = matchInfo[1];
-                country1Goals.style.position = "relative";
-                country1Goals.style.right = "10px";
+                let boxFlagCountryTwo = countryContainerCreator(matchInfo[2])
+                let country2Goals = teamGoalsBuilder(matchInfo[3]);
+                countryTwoRow.append(boxFlagCountryTwo, country2Goals);
 
-                countryOneRow.appendChild(boxFlagCountryOne);                
-                countryOneRow.appendChild(country1Goals);
+                box.append(countryOneRow, countryTwoRow, matchDateRow);
 
-                let secCountryFlag = getCountryFlag(matchInfo[2]);
-                let countrie2test = countryNameElement(matchInfo[2]);
-
-                let boxFlagCountryTwo = flagAndCountryBox();
-                boxFlagCountryTwo.appendChild(secCountryFlag);
-                boxFlagCountryTwo.append(countrie2test);
-                
-                let country2Goals = document.createElement('p');
-                country2Goals.innerHTML = matchInfo[3];
-                country2Goals.style.position = "relative";
-                country2Goals.style.right = "10px";
-
-                countryTwoRow.appendChild(boxFlagCountryTwo);
-                countryTwoRow.appendChild(country2Goals);
-
-                matchDateRow.innerHTML = matchInfo[4];
-                matchDateRow.style.color = "grey";
-
-                box.appendChild(countryOneRow);
-                box.appendChild(countryTwoRow);
-                box.appendChild(matchDateRow);
-
-                box.classList.add("div-few-style");
                 frameContainer.appendChild(box);
                 frameContainer.scrollIntoView();
             }
