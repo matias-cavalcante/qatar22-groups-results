@@ -70,7 +70,7 @@ function mainMatches(url, titleContainer, frameContainer){
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        frame.appendChild(titleContainer);
+        frameContainer.appendChild(titleContainer);
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
 
