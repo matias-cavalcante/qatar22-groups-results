@@ -46,7 +46,14 @@ function getMatchInfo(source, position){
 
 function createResultRow(){
     const row = document.createElement('p');
+    row.classList.add('div-flags-and-matches');
     return row
+}
+
+function countryNameElement(name){
+    let country = document.createElement('p');
+    country.innerHTML = name;
+    return country
 }
 
 function getCountryFlag(country){
@@ -73,22 +80,14 @@ function mainMatches(url, titleContainer, frameContainer){
         frameContainer.appendChild(titleContainer);
             for (let block = 0; block < data.length; block ++){
                 const box = document.createElement("div");
-
                 let matchInfo = getMatchInfo(data, block);
 
-
                 const countryOneRow = createResultRow();
-                countryOneRow.classList.add('div-flags-and-matches');
                 const countryTwoRow = createResultRow();
-                countryTwoRow.classList.add('div-flags-and-matches');
-
                 const matchDateRow =   createResultRow();
-                matchDateRow.classList.add('div-flags-and-matches');
-
 
                 let firstCountryFlag = getCountryFlag(matchInfo[0])
-                let countrie1test = document.createElement('p');
-                countrie1test.innerHTML = matchInfo[0];
+                let countrie1test = countryNameElement(matchInfo[0])
                 
                 let boxFlagCountryOne = flagAndCountryBox();
                 boxFlagCountryOne.appendChild(firstCountryFlag);
@@ -102,10 +101,8 @@ function mainMatches(url, titleContainer, frameContainer){
                 countryOneRow.appendChild(boxFlagCountryOne);                
                 countryOneRow.appendChild(country1Goals);
 
-                
-                let secCountryFlag = getCountryFlag(matchInfo[2])
-                let countrie2test = document.createElement('p');
-                countrie2test.innerHTML = matchInfo[2];
+                let secCountryFlag = getCountryFlag(matchInfo[2]);
+                let countrie2test = countryNameElement(matchInfo[2]);
 
                 let boxFlagCountryTwo = flagAndCountryBox();
                 boxFlagCountryTwo.appendChild(secCountryFlag);
@@ -129,9 +126,6 @@ function mainMatches(url, titleContainer, frameContainer){
                 box.classList.add("div-few-style");
                 frameContainer.appendChild(box);
                 frameContainer.scrollIntoView();
-
-                console.log("We are here")
-
             }
 
         });
