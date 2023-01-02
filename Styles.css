@@ -95,9 +95,6 @@ body {
 #see-re:hover {
     cursor: pointer;
     background-color: #550164;
-    ;
-    width: 140px;
-    height: 70px;
     transition: 1s;
 }
 
@@ -173,9 +170,9 @@ body {
 #first-p-games:hover,
 #second-p-games:hover,
 #third-p-games:hover {
-    font-size: 1.1em;
-    transition: 1s;
+    transition: 1.1s;
     cursor: pointer;
+    background-color: #550164;
 }
 
 .img-container {
@@ -304,9 +301,9 @@ img {
 }
 
 #results-16:hover {
-    font-size: 1.1em;
-    transition: 1s;
+    transition: 1.1s;
     cursor: pointer;
+    background-color: #550164;
 }
 
 #group-16-section-container {
