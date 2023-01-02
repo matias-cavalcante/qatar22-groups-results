@@ -1,5 +1,3 @@
-import {createFlagAndCountryBox} from './scriptModules/smallBoxes';
-
 const firstButton = document.getElementById('first-p-games')
 const secondButton = document.getElementById('second-p-games')
 const thirdButton = document.getElementById('third-p-games')
@@ -80,12 +78,12 @@ function getCountryFlag(country){
     flagLeft.style.paddingRight = "10px";
     return flagLeft;
 }
-/*
+
 function flagAndCountryBox(){
     let flagAndCountry = document.createElement('div');
     flagAndCountry.style.display = "flex";
     return flagAndCountry
-}*/
+}
 
 function teamGoalsBuilder(amount){
     let teamGoals = document.createElement('p');
@@ -96,7 +94,7 @@ function teamGoalsBuilder(amount){
 }
 
 function countryContainerCreator(countryName){
-    let boxFlagCountry = createFlagAndCountryBox();
+    let boxFlagCountry = flagAndCountryBox();
     let countryFlag = getCountryFlag(countryName)
     let countryNameStyled = countryNameElement(countryName)
     boxFlagCountry.append(countryFlag, countryNameStyled);
