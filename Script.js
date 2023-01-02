@@ -9,7 +9,6 @@ const resultGroupSixtenBox = document.getElementById('group-16-section-container
 
 const scrollUpButton = document.getElementById('go-top');
 
-
 scrollUpButton.addEventListener('click', function(){
     window.scrollTo({
         top: 0,
@@ -17,6 +16,25 @@ scrollUpButton.addEventListener('click', function(){
         behavior: "smooth"
       });
 })
+
+//Extract name, and search flag image with corresponding name
+
+function countryNameElement(name){
+    let country = document.createElement('p');
+    country.innerHTML = name;
+    return country
+}
+
+function getCountryFlag(country){
+    let flagLeft = document.createElement("img");
+    flagLeft.src = "Images/smallFlags/" + country + ".png";
+    flagLeft.style.maxWidth = "50px";
+    flagLeft.style.maxHeight = "45px";
+    flagLeft.style.paddingRight = "10px";
+    return flagLeft;
+}
+
+//Create boxes to display results of matches
 
 function createMatchBoxes(){
     const styledBox = document.createElement("div");
@@ -37,6 +55,22 @@ function fixtureH2container(h2element, styles){
     phaseContainer.classList.add(styles);
     return phaseContainer;
 }
+
+function flagAndCountryBox(){
+    let flagAndCountry = document.createElement('div');
+    flagAndCountry.style.display = "flex";
+    return flagAndCountry
+}
+
+function countryContainerCreator(countryName){
+    let boxFlagCountry = flagAndCountryBox();
+    let countryFlag = getCountryFlag(countryName)
+    let countryNameStyled = countryNameElement(countryName)
+    boxFlagCountry.append(countryFlag, countryNameStyled);
+    return boxFlagCountry
+}
+
+//Get and handle results
 
 function getMatchInfo(source, position){
     let firstTeam = Object.keys(source[position])[0];
@@ -64,27 +98,6 @@ function createDateRow(date){
     return dateRow
 }
 
-function countryNameElement(name){
-    let country = document.createElement('p');
-    country.innerHTML = name;
-    return country
-}
-
-function getCountryFlag(country){
-    let flagLeft = document.createElement("img");
-    flagLeft.src = "Images/smallFlags/" + country + ".png";
-    flagLeft.style.maxWidth = "50px";
-    flagLeft.style.maxHeight = "45px";
-    flagLeft.style.paddingRight = "10px";
-    return flagLeft;
-}
-
-function flagAndCountryBox(){
-    let flagAndCountry = document.createElement('div');
-    flagAndCountry.style.display = "flex";
-    return flagAndCountry
-}
-
 function teamGoalsBuilder(amount){
     let teamGoals = document.createElement('p');
     teamGoals.innerHTML = amount;
@@ -93,15 +106,6 @@ function teamGoalsBuilder(amount){
     return teamGoals
 }
 
-function countryContainerCreator(countryName){
-    let boxFlagCountry = flagAndCountryBox();
-    let countryFlag = getCountryFlag(countryName)
-    let countryNameStyled = countryNameElement(countryName)
-    boxFlagCountry.append(countryFlag, countryNameStyled);
-    return boxFlagCountry
-}
-  
-//This will have to be changed so that it displays the different groups names
 
 function mainMatches(url, titleContainer, frameContainer){
     fetch(url)
@@ -143,7 +147,7 @@ firstButton.addEventListener('click', function(){
     clearFrame();
     const title = createFixtureH2('Groups phase one');
     const container = fixtureH2container(title, "div-matches-phases");
-    mainMatches('https://matiass37.pythonanywhere.com/one', container, frame);    
+    mainMatches('https://matiass37.pythonanywhere.com/one', container, frame);
 })
     
 secondButton.addEventListener('click', function(){
