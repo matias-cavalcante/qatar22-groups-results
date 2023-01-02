@@ -45,7 +45,7 @@ body {
 }
 
 .hero-section {
-    background-image: url("varios/full-stadium.png");
+    background-image: url("Images/background/full-stadium.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #8A1538;
@@ -271,7 +271,6 @@ img {
 }
 
 
-
 .img-16-results {
     min-height: 310px;
     grid-column-start: 2;
@@ -281,7 +280,6 @@ img {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: white;
-
 }
 
 .img-16-results img {
@@ -372,7 +370,7 @@ img {
     }
 
     #results-16-img {
-        content: url("varios/brazilkoreamini.jpg");
+        content: url("Images/background/brazilkoreamini.jpg");
         width: 88%;
     }
 
@@ -389,7 +387,7 @@ img {
     }
 
     .hero-section {
-        background-image: url("varios/wcup-port-mob.jpg");
+        background-image: url("Images/background/wcup-port-mob.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-color: rgb(138, 21, 56, 0.6);
@@ -429,11 +427,9 @@ img {
     .div-matches-phases {
         grid-column: span 1;
     }
-
 }
 
 @media screen and (max-width: 450px) {
-
     #see-re {
         top: 170%;
     }
