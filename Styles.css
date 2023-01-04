@@ -235,12 +235,12 @@ img {
 /*Below section with the round of 16*/
 
 
-#Round-of-16 {
+.main-container-qualifier {
     position: relative;
     background-color: white;
     width: 95%;
     left: 2.5%;
-    margin-bottom: 8%;
+    margin-bottom: 4%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-radius: 8px;
@@ -249,7 +249,7 @@ img {
 }
 
 
-.text-16-results {
+.qualifiers-rounds {
     grid-column-start: 1;
     display: flex;
     flex-direction: column;
@@ -261,14 +261,14 @@ img {
 
 }
 
-#Round-of-16 div p {
+.main-container-qualifier div p {
     width: 75%;
     text-align: justify;
     font-size: 1.2rem;
 }
 
 
-.img-16-results {
+.qualifiers-img-container {
     min-height: 310px;
     grid-column-start: 2;
     display: flex;
@@ -279,8 +279,9 @@ img {
     background-color: white;
 }
 
-.img-16-results img {
+.qualifiers-img-container img {
     width: 70%;
+    max-height: 402px;
     align-self: center;
 }
 
@@ -316,38 +317,82 @@ img {
     width: 100%;
 }
 
+
+/*Quarter finals styles*/
+
+#round-of-8 {
+    border-radius: 8px;
+}
+
+#results-8-inner-box {
+    grid-column-start: 2;
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#div-8-container {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
 @media screen and (max-width: 1014px) {
 
     .hero-elements h1 {
         font-size: 2rem;
     }
 
-
-    #Round-of-16 h2 {
-        text-indent: 0%;
-        grid-column: span 2;
-        text-align: center;
+    .main-container-qualifier {
+        padding-bottom: 1%;
     }
 
-    .text-16-results {
+    .qualifiers-rounds {
         grid-column: span 2;
         margin-bottom: 30px;
         border-top-right-radius: 8px;
         border-bottom-left-radius: 0px;
     }
 
-    #Round-of-16 div p {
+    #results-8-inner-box {
+        border-radius: 0px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    #results-8-inner-box {
+        grid-column: span 2;
+        grid-row-start: 1;
+        margin-bottom: 30px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0px;
+    }
+
+    #div-8-container {
+        border-radius: 0px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    #div-8-container {
+        grid-column: span 2;
+        grid-row-start: 2;
+    }
+
+    .main-container-qualifier div p {
         width: 60%;
         font-size: 1rem;
     }
 
 
-    .img-16-results {
+    .qualifiers-img-container {
         grid-column: span 2;
         border-bottom-left-radius: 8px;
     }
 
-    .img-16-results img {
+    .qualifiers-img-container img {
         width: 60%;
     }
 }
@@ -355,17 +400,22 @@ img {
 
 @media screen and (max-width: 736px) {
 
-    #Round-of-16 {
+    .main-container-qualifier {
         width: 88%;
         left: 6%;
     }
 
-    #Round-of-16 div p {
+    .main-container-qualifier div p {
         width: 85%;
     }
 
     #results-16-img {
         content: url("Images/background/brazilkoreamini.jpg");
+        width: 88%;
+    }
+
+    #results-8-img {
+        content: url("Images/background/mar-v-por-small.jpg");
         width: 88%;
     }
 
