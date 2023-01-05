@@ -4,8 +4,13 @@ const thirdButton = document.getElementById('third-p-games')
 
 const frame = document.getElementById("Fixture");
 
-const resultGroupSixteen = document.getElementById('results-16')
+const resultGroupSixteen = document.getElementById('results-16-button')
 const resultGroupSixtenBox = document.getElementById('group-16-section-container')
+
+const resultGroupQuarters = document.getElementById('results-8-button')
+const resultGroupQuartersBox = document.getElementById('group-8-section-container')
+
+
 
 const scrollUpButton = document.getElementById('go-top');
 
@@ -16,7 +21,7 @@ scrollUpButton.addEventListener('click', function(){
         behavior: "smooth"
       });
 })
-
+  
 //Extract name, and search flag image with corresponding name
 
 function countryNameElement(name){
@@ -149,6 +154,7 @@ firstButton.addEventListener('click', function(){
     const title = createFixtureH2('Groups phase one');
     const container = fixtureH2container(title, "div-matches-phases");
     mainMatches('https://matiass37.pythonanywhere.com/one', container, frame);
+    hideSpinner();
 })
     
 secondButton.addEventListener('click', function(){
@@ -172,4 +178,11 @@ resultGroupSixteen.addEventListener('click', function(){
     const title = createFixtureH2('Group of sixteen');
     const container = fixtureH2container(title, "div-matches-phases")
     mainMatches('https://matiass37.pythonanywhere.com/sixteen', container, resultGroupSixtenBox);
+})
+
+resultGroupQuarters.addEventListener('click', function(){
+    clearFrame(frame);
+    const title = createFixtureH2('Quarter final');
+    const container = fixtureH2container(title, "div-matches-phases")
+    mainMatches('https://matiass37.pythonanywhere.com/quarters', container, resultGroupQuartersBox);
 })
