@@ -419,6 +419,11 @@ img {
         width: 88%;
     }
 
+    #semi-final-img {
+        content: url("Images/background/neth-arg-small.jpg");
+        width: 88%;
+    }
+
     #button-grid {
         padding-top: 20%;
     }
