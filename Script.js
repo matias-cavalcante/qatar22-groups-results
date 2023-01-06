@@ -10,7 +10,7 @@ const resultGroupSixtenBox = document.getElementById('group-16-section-container
 const resultGroupQuarters = document.getElementById('results-8-button')
 const resultGroupQuartersBox = document.getElementById('group-8-section-container')
 
-
+const resultsFrames = [frame, resultGroupSixtenBox, resultGroupQuartersBox]
 
 const scrollUpButton = document.getElementById('go-top');
 
@@ -142,46 +142,45 @@ function mainMatches(url, titleContainer, frameContainer){
         });
 }
 
+
 function clearFrame(eraseMe) {
-    while (eraseMe.firstChild) {
-      eraseMe.removeChild(eraseMe.firstChild);
+    for (btn = 0; btn < resultsFrames.length ; btn++){
+        while (eraseMe[btn].firstChild) {
+            eraseMe[btn].removeChild(eraseMe[btn].firstChild);
+        }
     }
   }
 
 firstButton.addEventListener('click', function(){
-    clearFrame(frame);
-    clearFrame(resultGroupSixtenBox);
+    clearFrame(resultsFrames);
     const title = createFixtureH2('Groups phase one');
     const container = fixtureH2container(title, "div-matches-phases");
     mainMatches('https://matiass37.pythonanywhere.com/one', container, frame);
-    hideSpinner();
 })
     
 secondButton.addEventListener('click', function(){
-    clearFrame(frame);
-    clearFrame(resultGroupSixtenBox);
+    clearFrame(resultsFrames);
     const title = createFixtureH2('Groups phase two');
     const container = fixtureH2container(title, "div-matches-phases");
     mainMatches('https://matiass37.pythonanywhere.com/two', container, frame);
 })
     
 thirdButton.addEventListener('click', function(){
-    clearFrame(frame);
-    clearFrame(resultGroupSixtenBox);
+    clearFrame(resultsFrames);
     const title = createFixtureH2('Groups phase three');
     const container = fixtureH2container(title, "div-matches-phases");
     mainMatches('https://matiass37.pythonanywhere.com/three', container, frame);
 })
 
 resultGroupSixteen.addEventListener('click', function(){
-    clearFrame(frame);
+    clearFrame(resultsFrames);
     const title = createFixtureH2('Group of sixteen');
     const container = fixtureH2container(title, "div-matches-phases")
     mainMatches('https://matiass37.pythonanywhere.com/sixteen', container, resultGroupSixtenBox);
 })
 
 resultGroupQuarters.addEventListener('click', function(){
-    clearFrame(frame);
+    clearFrame(resultsFrames);
     const title = createFixtureH2('Quarter final');
     const container = fixtureH2container(title, "div-matches-phases")
     mainMatches('https://matiass37.pythonanywhere.com/quarters', container, resultGroupQuartersBox);
