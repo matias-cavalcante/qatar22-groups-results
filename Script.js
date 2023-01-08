@@ -13,8 +13,11 @@ const resultGroupQuartersBox = document.getElementById('group-8-section-containe
 const resultSemiFinal = document.getElementById("results-semi-button" )
 const resultSemiFinalBox = document.getElementById("semi-final-section-container")
 
+const resultsThirdPlace = document.getElementById("results-third-button" )
+const resultsThirdPlaceBox = document.getElementById("third-place-section-container")
 
-const resultsFrames = [frame, resultGroupSixtenBox, resultGroupQuartersBox, resultSemiFinalBox]
+
+const resultsFrames = [frame, resultGroupSixtenBox, resultGroupQuartersBox, resultSemiFinalBox, resultsThirdPlaceBox]
 
 const scrollUpButton = document.getElementById('go-top');
 
@@ -195,4 +198,11 @@ resultSemiFinal.addEventListener('click', function(){
     const title = createFixtureH2('Semi final');
     const container = fixtureH2container(title, "div-matches-phases")
     mainMatches('https://matiass37.pythonanywhere.com/semi', container, resultSemiFinalBox);
+})
+
+resultsThirdPlace.addEventListener('click', function(){
+    clearFrame(resultsFrames);
+    const title = createFixtureH2('Third place match');
+    const container = fixtureH2container(title, "div-matches-phases")
+    mainMatches('https://matiass37.pythonanywhere.com/thirdFourth', container, resultsThirdPlaceBox);
 })

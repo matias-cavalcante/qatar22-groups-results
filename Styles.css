@@ -316,9 +316,8 @@ img {
     width: 100%;
 }
 
-/*Third and fourth place*/
-
 /*Quarter finals styles*/
+/*Third and fourth place*/
 
 #round-of-8,
 #third-place {
@@ -343,6 +342,10 @@ img {
     border-bottom-left-radius: 8px;
 }
 
+#third-place-section-container {
+    display: flex;
+    flex-direction: column;
+}
 
 @media screen and (max-width: 1014px) {
 
