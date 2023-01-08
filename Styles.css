@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #DEE2D5;
+    background-color: #cacbc7;
 }
 
 #go-top {
@@ -258,7 +258,6 @@ img {
     background-color: #8A1538;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-
 }
 
 .main-container-qualifier div p {
@@ -317,27 +316,33 @@ img {
     width: 100%;
 }
 
+/*Third and fourth place*/
 
 /*Quarter finals styles*/
 
-#round-of-8 {
+#round-of-8,
+#third-place {
     border-radius: 8px;
 }
 
-#results-8-inner-box {
+#results-8-inner-box,
+#third-inner-box {
     grid-column-start: 2;
     border-radius: 0px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
-#div-8-container {
+#div-8-container,
+#third-forth-img {
+    background-color: white;
     grid-column-start: 1;
     grid-row-start: 1;
     border-radius: 0px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
+
 
 @media screen and (max-width: 1014px) {
 
@@ -356,27 +361,22 @@ img {
         border-bottom-left-radius: 0px;
     }
 
-    #results-8-inner-box {
-        border-radius: 0px;
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-    }
-
-    #results-8-inner-box {
+    #results-8-inner-box,
+    #third-inner-box {
         grid-column: span 2;
         grid-row-start: 1;
         margin-bottom: 30px;
+        border-radius: 0px;
         border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
         border-bottom-left-radius: 0px;
     }
 
-    #div-8-container {
+    #div-8-container,
+    #third-forth-img {
         border-radius: 0px;
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
-    }
-
-    #div-8-container {
         grid-column: span 2;
         grid-row-start: 2;
     }
@@ -421,6 +421,11 @@ img {
 
     #semi-final-img {
         content: url("Images/background/neth-arg-small.jpg");
+        width: 88%;
+    }
+
+    #third-place-img {
+        content: url("Images//background/kovacic-serbia-morocco-mobile.jpeg");
         width: 88%;
     }
 
