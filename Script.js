@@ -16,6 +16,11 @@ const resultSemiFinalBox = document.getElementById("semi-final-section-container
 const resultsThirdPlace = document.getElementById("results-third-button" )
 const resultsThirdPlaceBox = document.getElementById("third-place-section-container")
 
+const resultsFinal = document.getElementById("reveal-champion-button" )
+const resultsFinalBox = document.getElementById("final-result-container")
+
+const championBox = document.getElementById("celebration");
+
 
 const resultsFrames = [frame, resultGroupSixtenBox, resultGroupQuartersBox, resultSemiFinalBox, resultsThirdPlaceBox]
 
@@ -145,7 +150,6 @@ function mainMatches(url, titleContainer, frameContainer){
                 frameContainer.appendChild(box);
                 frameContainer.scrollIntoView();
             }
-
         });
 }
 
@@ -205,4 +209,12 @@ resultsThirdPlace.addEventListener('click', function(){
     const title = createFixtureH2('Third place match');
     const container = fixtureH2container(title, "div-matches-phases")
     mainMatches('https://matiass37.pythonanywhere.com/thirdFourth', container, resultsThirdPlaceBox);
+})
+
+resultsFinal.addEventListener('click', function(){
+    clearFrame(resultsFrames);
+    const title = createFixtureH2('Final result!');
+    const container = fixtureH2container(title, "div-matches-phases")
+    mainMatches('https://matiass37.pythonanywhere.com/finalResult', container, resultsFinalBox);
+    championBox.style.display = "flex";
 })
