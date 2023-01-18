@@ -79,7 +79,7 @@ function flagAndCountryBox(){
     return flagAndCountry
 }
 
-function countryContainerCreator(countryName){
+function countryBoxCreator(countryName){
     let boxFlagCountry = flagAndCountryBox();
     let countryFlag = getCountryFlag(countryName)
     let countryNameStyled = countryNameElement(countryName)
@@ -101,7 +101,7 @@ function getMatchInfo(source, position){
     return [firstTeam, firstTgoals, secondTeam, secondTgoals, matchDate]
 }
 
-function createResultRow(){
+function createRow(){
     const row = document.createElement('p');
     row.classList.add('div-flags-and-matches');
     return row
@@ -115,7 +115,7 @@ function createDateRow(date){
     return dateRow
 }
 
-function teamGoalsBuilder(amount){
+function teamGoals(amount){
     let teamGoals = document.createElement('p');
     teamGoals.innerHTML = amount;
     teamGoals.style.position = "relative";
@@ -123,6 +123,13 @@ function teamGoalsBuilder(amount){
     return teamGoals
 }
 
+function createRowInResults(rowCreator, flagCreator, goalsCreator, data){
+    const flag = flagCreator(data[0])
+    const goals = goalsCreator(data[1])
+    const flagAndGoalContainer = rowCreator()
+    flagAndGoalContainer.append(flag, goals)
+    return flagAndGoalContainer
+}
 
 function mainMatches(url, titleContainer, frameContainer){
     fetch(url)
@@ -133,20 +140,12 @@ function mainMatches(url, titleContainer, frameContainer){
                 const box = createMatchBoxes();
                 let matchInfo = getMatchInfo(data, block);
 
-                const countryOneRow = createResultRow();
-                const countryTwoRow = createResultRow();
                 const matchDateRow =  createDateRow(matchInfo[4]);
+                
+                const firstTeamRow = createRowInResults(createRow, countryBoxCreator, teamGoals, [matchInfo[0], matchInfo[1]]);
+                const secondTeamRow = createRowInResults(createRow, countryBoxCreator, teamGoals,[matchInfo[2], matchInfo[3]]);
 
-                let boxFlagCountryOne = countryContainerCreator(matchInfo[0])
-                let countryOneGoals = teamGoalsBuilder(matchInfo[1]);
-                countryOneRow.append(boxFlagCountryOne, countryOneGoals);
-
-                let boxFlagCountryTwo = countryContainerCreator(matchInfo[2])
-                let country2Goals = teamGoalsBuilder(matchInfo[3]);
-                countryTwoRow.append(boxFlagCountryTwo, country2Goals);
-
-                box.append(countryOneRow, countryTwoRow, matchDateRow);
-
+                box.append(firstTeamRow, secondTeamRow, matchDateRow);
                 frameContainer.appendChild(box);
                 frameContainer.scrollIntoView();
             }
