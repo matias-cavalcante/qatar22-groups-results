@@ -1,7 +1,3 @@
-import { testSum } from './testScript.js';
-
-console.log(testSum(23, 22))
-
 const firstButton = document.getElementById('first-p-games')
 const secondButton = document.getElementById('second-p-games')
 const thirdButton = document.getElementById('third-p-games')
